@@ -1,35 +1,23 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// const heading = React.createElement("h1",{id:"heading",abc:"xyz"},"Hello World From React!");
 
+// React.createElement => ReactElement - JS Object => HTMLElement(render)
+const heading = React.createElement("h1", { id: "heading" }, "Namaste React");
 
-// <div id="parent">
-//     <div id="child1">
-//         <h1>Hello from h1 tag</h1>
-//         <h2>Hello from h2 tag</h2>
-//     </div>
-//     <div id="child2">
-//         <h1>Hello from h1 tag</h1>
-//         <h2>Hello from h2 tag</h2>
-//     </div>
-// </div>
+// JSX transpiled(the code is converted into the code which browser can understand) before it reaches the JS Engine - PARCEL -> Babel
 
-// below is the sample of the code.
+// JSX(transpiled) => React.createElement => ReactElement - JS Object => HTMLElement(render)
+// Behind the scenes JSX is using React.createElement
 
-const parent = React.createElement("div",{id:"parent"},[
-    React.createElement("div",{id:"child1"},
-        [React.createElement("h1",{},"Hello h1"),   // When we want to pass 2 or more childrens then we use array
-        React.createElement("h2",{},"Hello h2")
-    ]),                                             // We can write react in Js but ,
-    React.createElement("div",{id:"child2"},        // It is very complicated for that reason we use JSX 
-        [React.createElement("h1",{},"Hello h1"),
-        React.createElement("h2",{},"Hello h2")])])
+//React Element
+const jsxHeading = <h1 id="heading" tabIndex="5">Namaste React with JSX</h1>
 
-// ReactElement(object) ==> HTML(browser understands)
-
-// React.createElement it creates object behind the scene this object is the converted into html tag which is understood by the browser.
-
-console.log(parent) // returns object in which the attributes are also called props and the content inside the heading is children.
+//React Component
+const HeadingComponent = ()=>{
+    return <h1>Namaste React In Heading</h1>
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(parent);
+// root.render(<HeadingComponent/>) // This is how to render React Component
+root.render(jsxHeading); // This is how to render React ELement

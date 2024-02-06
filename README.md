@@ -1,0 +1,18 @@
+# Parcel
+- Dev build
+- Builds Local Server
+- HMR = Hot Module Replacement(After saving the file automatically disply the changes on server)
+- File Watching Algorithm - written in C++
+- Caching = faster builds
+- Image Optimization
+- Minification of File(Remove white spaces, etc..)
+- Bundelling 
+- Compress the file
+- Consistent Hashing
+- Code Splitting
+- Differential Bundling - support older browsers
+- Diagnostic
+- Error Handling
+- Https
+- Tree Shaking - remove unused code
+- Different dev and build bundles
